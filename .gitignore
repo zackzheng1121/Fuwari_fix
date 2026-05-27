@@ -1,0 +1,36 @@
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+.vercel
+
+package-lock.json
+bun.lockb
+yarn.lock
+
+# ide
+.idea
+*.iml
+src/pages/404.astro
+src/content/SDlearning-11401
+src/content/posts/read-exp-114020.md
+src/content/posts/THJCC-2026-writeup/asset/test.bash
+src/content/posts/THJCC-2026-writeup/asset/test.py

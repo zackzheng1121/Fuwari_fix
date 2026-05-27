@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from "astro";
+import Pagination from "../components/control/Pagination.astro";
+import PostPage from "../components/PostPage.astro";
+import { PAGE_SIZE } from "../constants/constants";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+import { getSortedListablePosts } from "../utils/content-utils";
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const allBlogPosts = await getSortedListablePosts();
+	return paginate(allBlogPosts, { pageSize: PAGE_SIZE });
+}) satisfies GetStaticPaths;
+// https://github.com/withastro/astro/issues/6507#issuecomment-1489916992
+
+const { page } = Astro.props;
+
+const len = page.data.length;
+const homeTitle = "PGpenguin72的網站 / pg72.tw";
+const homeDescription = "是我的小網站喔！";
+const homeOgImage = "https://pg72.tw/og/home.png";
+---
+
+<MainGridLayout
+	title={homeTitle}
+	description={homeDescription}
+	ogImage={homeOgImage}
+>
+    <PostPage page={page}></PostPage>
+    <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
+</MainGridLayout>
