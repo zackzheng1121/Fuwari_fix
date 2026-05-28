@@ -62,49 +62,46 @@ export const navBarConfig: NavBarConfig = {
 				{
 					name: "關於我",
 					url: "/about/",
-				},
-				{
-					name: "裝置",
-					url: "/device/",
-				},
-				{
-					name: "證書/證明",
-					url: "/certificates/",
-				},
+				}
 			],
 		},
 		{
 			name: "GitHub",
-			url: "https://github.com/PGpenguin72/pg72.tw", // 內部連結不應包含基礎路徑，因為它會自動添加
+			url: "https://github.com/zackzheng1121", // 內部連結不應包含基礎路徑，因為它會自動添加
 			external: true, // 顯示外部連結圖標，並在新標籤頁中開啟
 		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "/avatar.png", // 相對於 /src 目錄。如果以 '/' 開頭，則相對於 /public 目錄
-	name: "PGpenguin72",
-	bio: "現居台灣台北市，17歲高中生。網名是PG企鵝喔～",
+	avatar: "assets/images/222833447.png", // 相對於 /src 目錄。如果以 '/' 開頭，則相對於 /public 目錄
+	name: "Zackzheng",
+	bio: "一個寫一些python/c#/一點C++的dev/wmc....總之成分複雜",
 	links: [
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/PGpenguin72",
-		},
-		{
-			name: "Email",
-			icon: "fa6-solid:envelope",
-			url: "mailto:hi@pg72.tw",
+			url: "https://github.com/zackzheng1121",
 		},
 		{
 			name: "Discord",
 			icon: "fa6-brands:discord",
-			url: "https://discord.com/users/609189792571457550",
+			url: "https://discord.gg/bHvHT2Sz",
 		},
 		{
 			name: "Instagram",
 			icon: "fa6-brands:instagram",
-			url: "https://www.instagram.com/pg_penguin_72/",
+			url: "https://www.instagram.com/zackzheng1121/",
+		},
+		{
+			name: "Steam",
+			icon: "fa6-brands:steam",
+			url: "https://steamcommunity.com/id/ZacKZheng1121-awa/",
+		},
+		{
+			name: "BiliBili",
+			icon: "streamline-ultimate:bilibili-logo-bold",
+			url: "https://space.bilibili.com/1998276963?spm_id_from=333.1007.0.0",
 		},
 	],
 };
