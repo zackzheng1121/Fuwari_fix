@@ -8,10 +8,10 @@ import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeComponents from "rehype-components"; /* Render the custom directive content */
+import rehypeComponents from "rehype-components";/* Render the custom directive content */
 import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
-import remarkDirective from "remark-directive"; /* Handle directives */
+import remarkDirective from "remark-directive";/* Handle directives */
 import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-directives";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
@@ -27,12 +27,15 @@ import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
-	site: "https://blog-test.zackzheng.me",
-	base: "/",
-	trailingSlash: "always",
-	integrations: [
+    site: "https://blog-test.zackzheng.me",
+    base: "/",
+    trailingSlash: "always",
+
+    integrations: [
 		tailwind({
 			nesting: true,
 		}),
@@ -117,7 +120,8 @@ export default defineConfig({
 			entryLimit: 45000,
 		}),
 	],
-	markdown: {
+
+    markdown: {
 		remarkPlugins: [
 			remarkGfm,
 			remarkMath,
@@ -171,7 +175,8 @@ export default defineConfig({
 			],
 		],
 	},
-	vite: {
+
+    vite: {
 		optimizeDeps: {
 			exclude: [
 				"@swup/astro/serialise",
@@ -200,4 +205,6 @@ export default defineConfig({
 			},
 		},
 	},
+
+    adapter: cloudflare()
 });
