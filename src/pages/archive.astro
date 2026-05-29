@@ -9,7 +9,6 @@ const sortedPostsList = await getSortedPostsList();
 <MainGridLayout
 	title="歸檔"
 	description="文章總覽"
-	ogImage="https://pg72.tw/og/archive.png"
 >
     <ArchivePanel sortedPosts={sortedPostsList} client:only="svelte"></ArchivePanel>
 </MainGridLayout>
